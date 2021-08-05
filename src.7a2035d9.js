@@ -5,4 +5,4 @@ const e=e=>new Promise(o=>{setTimeout(()=>{o(e)},e)}),o=e=>console.log(`Resolved
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./js/delay"),require("./js/toggle_user"),require("./js/transactions");
 },{"./js/delay":"dYe9","./js/toggle_user":"nlcn","./js/transactions":"nlcn"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.7a2035d9.js.map
+//# sourceMappingURL=/goit-js-hw-11-promisification/src.7a2035d9.js.map
