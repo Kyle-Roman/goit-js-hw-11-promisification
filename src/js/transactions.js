@@ -10,14 +10,14 @@ function makeTransaction(transaction) {
         setTimeout(() => {
             const canProcess = Math.random() > 0.3;
             if (canProcess) {
-                resolve(logSuccess(transaction.id, delay));
+                resolve({ id: transaction.id, delay: delay });
             }
-            reject(logError(transaction.id));
+            reject(transaction.id);
         }, delay);
     });
 };
 
-function logSuccess(id, delay) {
+function logSuccess({ id, delay }) {
     console.log(`Transaction ${id} processed in ${delay}ms`);
 };
 
@@ -25,23 +25,6 @@ function logError(id) {
     console.warn(`Error processing transaction ${id}. Please try again later.`);
 };
 
-
-// function lottery() {
-//     return new Promise(resolve => {
-//         const canProcess = Math.random() > 0.3;
-//         resolve(canProcess);
-//     });
-// };
-/*
- * Работает так
- */
-// makeTransaction({ id: 70, amount: 150 }, logSuccess, logError);
-// makeTransaction({ id: 71, amount: 230 }, logSuccess, logError);
-// makeTransaction({ id: 72, amount: 75 }, logSuccess, logError);
-// makeTransaction({ id: 73, amount: 100 }, logSuccess, logError);
-/*
- * Должно работать так
- */
 makeTransaction({ id: 70, amount: 150 })
     .then(logSuccess)
     .catch(logError);
